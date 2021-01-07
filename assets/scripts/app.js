@@ -10,4 +10,10 @@ const authEvents = require('./auth/events')
 $(() => {
   // your JS code goes here
   $('#sign-up').on('submit', authEvents.onSignUp)
+  // event listener for sign in
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  // create event listener changePassword
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  // create event listener sign out
+  $('#sign-out').on('submit', authEvents.onSignOut)
 })

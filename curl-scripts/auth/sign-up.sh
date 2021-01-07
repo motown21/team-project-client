@@ -1,4 +1,4 @@
-curl "https://express-api-team.herokuapp.com/sign-up" \
+curl "https://calm-island-25666.herokuapp.com/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
