@@ -1,4 +1,4 @@
-curl "https://calm-island-25666.herokuapp.com/create" \
+curl "https://calm-island-25666.herokuapp.com/teams" \
   --include \
   --request POST \
   --header "Authorization: Bearer ${TOKEN}" \

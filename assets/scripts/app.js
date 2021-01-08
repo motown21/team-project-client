@@ -9,6 +9,7 @@ const authEvents = require('./auth/events')
 const teamEvents = require('./teams/events')
 
 $(() => {
+  $('.authenticated').hide()
   // your JS code goes here
   $('#sign-up').on('submit', authEvents.onSignUp)
   // event listener for sign in
@@ -18,12 +19,12 @@ $(() => {
   // create event listener sign out
   $('#sign-out').on('submit', authEvents.onSignOut)
   // create event listener create
+  $('#create-new-team-button').on('submit', teamEvents.onCreateTeam)
   $('#create-team').on('submit', teamEvents.onCreateTeam)
-  $('#create-team-button').on('click', teamEvents.onCreateTeam)
-  // create event listener destroy
-  $('#destroy').on('submit', teamEvents.onDestroyTeam)
   // create event listener update
   $('#update').on('submit', teamEvents.onUpdateTeam)
   // create event listener show
   $('#show').on('submit', teamEvents.onShowTeam)
+  // create event listener destroy
+  $('#destroy').on('submit', teamEvents.onDestroyTeam)
 })

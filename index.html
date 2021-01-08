@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-
+      <!-- <div class="unauthenticated"> -->
       <form id="sign-up">
         <input name="credentials[email]" type="text" placeholder="NBA@email.com">
         <input name="credentials[password]" type="password" placeholder="Password">
@@ -25,7 +25,9 @@
         <input name="credentials[password]" type="password" placeholder="Password">
         <button type="submit"> Sign In </button>
       </form>
+    <!-- </div> -->
 
+      <!-- <div class="authenticated"> -->
       <form id="change-password">
       <input name="passwords[old]" type="password" placeholder="old password">
       <input name="passwords[new]" type="password" placeholder="new password">
@@ -37,23 +39,37 @@
     </form>
 
   <p id="message"></p>
+  <form id="create-new-team-button">
+    <button type="submit"> Create team</button>
+  </form>
 
+  <h2> Create Team</h2>
     <form id="create-team">
-      <button type="submit"> create team</button>
-    </form>
-
-    <form id="destroy">
-      <button type="submit"> destroy team</button>
-    </form>
-
-    <form id="show">
-      <button type="submit"> show team</button>
+     <label for="name">Team Name:</label><br>
+     <input name="team[name]" type="text" placeholder="Team Name"><br>
+     <label for="coach">Coach:</label><br>
+     <input name="team[coach]" type="text" placeholder="Head Coach"><br>
+     <label for="mascot">Mascot:</label><br>
+     <input name="team[mascot]" type="text" placeholder="Mascot"><br>
+     <label for="record">Record:</label><br>
+     <input name="team[record]" type="text" placeholder="(0-0)"><br>
+     <label for="city">City:</label><br>
+     <input name="team[city]" type="text" placeholder="City"><br>
+     <button type="submit" id="submit-team-button"> submit</button>
     </form>
 
     <form id="update">
       <button type="submit"> update team</button>
     </form>
 
+    <form id="show">
+      <button type="submit"> show team</button>
+    </form>
+
+    <form id="destroy">
+      <button type="submit"> destroy team</button>
+    </form>
+  <!--  </div> -->
 
       <h1>CENTER COURT</h1>
 
