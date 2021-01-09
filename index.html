@@ -1,77 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>NBA teams</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>DREAM team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <!-- <div class="unauthenticated"> -->
-      <form id="sign-up">
-        <input name="credentials[email]" type="text" placeholder="NBA@email.com">
-        <input name="credentials[password]" type="password" placeholder="Password">
-        <input name="credentials[password_confirmation]" type="password" placeholder="Password">
-        <button type="submit"> Sign Up </button>
-      </form>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <form id="sign-in">
-        <input name="credentials[email]" type="text" placeholder="NBA@email.com">
-        <input name="credentials[password]" type="password" placeholder="Password">
-        <button type="submit"> Sign In </button>
-      </form>
-    <!-- </div> -->
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <!-- <div class="authenticated"> -->
-      <form id="change-password">
-      <input name="passwords[old]" type="password" placeholder="old password">
-      <input name="passwords[new]" type="password" placeholder="new password">
-      <button type="submit">Change Password</button>
-    </form>
-
-    <form id="sign-out">
-      <button type="submit"> Sign Out</button>
-    </form>
-
-  <p id="message"></p>
-  <form id="create-new-team-button">
-    <button type="submit"> Create team</button>
+<body>
+  <!-- <div class="unauthenticated"> -->
+  <form id="sign-up">
+    <input name="credentials[email]" type="text" placeholder="NBA@email.com">
+    <input name="credentials[password]" type="password" placeholder="Password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="Password">
+    <button type="submit"> Sign Up </button>
   </form>
 
-  <h2> Create Team</h2>
-    <form id="create-team">
-     <label for="name">Team Name:</label><br>
-     <input name="team[name]" type="text" placeholder="Team Name"><br>
-     <label for="coach">Coach:</label><br>
-     <input name="team[coach]" type="text" placeholder="Head Coach"><br>
-     <label for="mascot">Mascot:</label><br>
-     <input name="team[mascot]" type="text" placeholder="Mascot"><br>
-     <label for="record">Record:</label><br>
-     <input name="team[record]" type="text" placeholder="(0-0)"><br>
-     <label for="city">City:</label><br>
-     <input name="team[city]" type="text" placeholder="City"><br>
-     <button type="submit" id="submit-team-button"> submit</button>
-    </form>
+  <form id="sign-in">
+    <input name="credentials[email]" type="text" placeholder="NBA@email.com">
+    <input name="credentials[password]" type="password" placeholder="Password">
+    <button type="submit"> Sign In </button>
+  </form>
+  <!-- </div> -->
 
-    <form id="update">
-      <button type="submit"> update team</button>
-    </form>
+  <!-- <div class="authenticated"> -->
+  <form id="change-password">
+    <input name="passwords[old]" type="password" placeholder="old password">
+    <input name="passwords[new]" type="password" placeholder="new password">
+    <button type="submit">Change Password</button>
+  </form>
 
-    <form id="show">
-      <button type="submit"> show team</button>
-    </form>
+  <form id="sign-out">
+    <button type="submit"> Sign Out</button>
+  </form>
 
-    <form id="destroy">
-      <button type="submit"> destroy team</button>
-    </form>
+  <p id="message"></p>
+
+  <!-- removed form and just add button with id -->
+
+
   <!--  </div> -->
 
-      <h1>CENTER COURT</h1>
+  <h1>CENTER COURT</h1>
 
-    </body>
+  <button id="all-teams-button" type="submit"> All Teams</button>
+  <button id="create-team-button" type="submit"> Create Team</button>
+  <button id="update-team-button" type="submit"> Update Team</button>
+  <button id="show-team-button" type="submit"> Show Team</button>
+  <button id="destroy-team-button" type="submit"> Destroy team</button>
+
+
+  <section>
+    <h2>Get All Teams</h2>
+    <button id="team-index">Get All Teams</button>
+  </section>
+
+  <h2> Create Team</h2>
+  <form id="create-team">
+    <label for="name">Team Name:</label><br>
+    <input name="team[name]" type="text" placeholder="Team Name"><br>
+    <label for="coach">Coach:</label><br>
+    <input name="team[coach]" type="text" placeholder="Head Coach"><br>
+    <label for="mascot">Mascot:</label><br>
+    <input name="team[mascot]" type="text" placeholder="Mascot"><br>
+    <label for="record">Record:</label><br>
+    <input name="team[record]" type="text" placeholder="(0-0)"><br>
+    <label for="city">City:</label><br>
+    <input name="team[city]" type="text" placeholder="City"><br>
+    <button type="submit" id="create-submit-button"> submit</button>
+  </form>
+  <section>
+    <div id="create-team-message" class="user-feedback"></div>
+  </section>
+  <section>
+    <div id="error-message" class="user-feedback"></div>
+    <div id="display-team"></div>
+  </section>
+
+
+  <h2> Update Team</h2>
+  <form id="update">
+    <label for="name">Team Name:</label><br>
+    <input name="team[name]" type="text" placeholder="Team Name"><br>
+    <label for="coach">Coach:</label><br>
+    <input name="team[coach]" type="text" placeholder="Head Coach"><br>
+    <label for="mascot">Mascot:</label><br>
+    <input name="team[mascot]" type="text" placeholder="Mascot"><br>
+    <label for="record">Record:</label><br>
+    <input name="team[record]" type="text" placeholder="(0-0)"><br>
+    <label for="city">City:</label><br>
+    <input name="team[city]" type="text" placeholder="City"><br>
+    <button type="submit" id="update-submit-button"> Update</button>
+  </form>
+  <div id="update-team-message" class="user-feedback"></div>
+
+  <h2>Get One Team</h2>
+  <form id="show-team">
+    <input name="team[name]" type="text" placeholder="team name here">
+    <button type="submit">Get Team</button>
+  </form>
+
+  <h2>Delete One Team</h2>
+  <form id="destroy-team">
+    <input name="team[name]" placeholder="team name here">
+    <button type="submit">Delete </button>
+
+  </form>
+  <div id="delete-team-message" class="user-feedback"></div>
+
+</body>
+
 </html>

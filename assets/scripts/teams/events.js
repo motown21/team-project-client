@@ -3,6 +3,16 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields')
 
+// index GET all teams
+const onGetTeams = function () {
+  // API call to get all of the team
+  api.index()
+
+  // create functions to run when Get all Teams is sucessful or fails
+    .then(ui.indexSuccess)
+    .catch(ui.onError)
+}
+
 const onCreateTeam = function (event) {
   // const data = event.target
   event.preventDefault()
@@ -15,43 +25,58 @@ const onCreateTeam = function (event) {
     .then(function (response) {
       return response
     })
-    .then(ui.newTeamSuccess)
-    .catch(ui.newTeamFailure)
+    .then(ui.createSuccess)
+    .catch(ui.createFailure)
+  $('#create-team-button').hide()
 }
 
-// const onUpdateTeam = function (event) {
-//   // Prevent the update team page from refreshing
-//   event.preventDefault()
-//
-//   // create functions to run when updateTeam is sucessful or fails
-//   api.updateTeam(formData)
-//     .then(ui.updateTeamSuccess)
-//     .catch(ui.updateTeamFailure)
-// }
-//
-// const onDestroyTeam = function (event) {
-//   console.log('on signout event')
-//   event.preventDefault()
-//
-//   api.signOut()
-//     .then(ui.signOutSuccess)
-//     .catch(ui.signOutFailure)
-// }
-//
-// const onShowTeam = function (event) {
-//   // Prevent the change password page form refreshing
-//   event.preventDefault()
-//
-//   // Get form data and use event.target as the form
-//   const form = event.target
-//   const formData = getFormFields(form)
-//
-//   // create functions to run when change password is sucessful or fails
-//   api.changePassword(formData)
-//     .then(ui.changePasswordSuccess)
-//     .catch(ui.changePasswordFailure)
-// }
+const onUpdateTeam = function (event) {
+  // Prevent the update team page from refreshing
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  // create functions to run when updateTeam is sucessful or fails
+  api.updateTeam(formData)
+    .then(ui.updateTeamSuccess)
+    .catch(ui.updateTeamFailure)
+}
+
+// index GET one team
+const onGetTeam = function (event) {
+  // prevent default submit action to stop the page from refreshing
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+
+  // API call for getting one team
+  api.show(formData)
+
+  // create functions to run when Get one Team is sucessful or fails
+    .then(ui.showSuccess)
+    .catch(ui.onError)
+}
+
+const onDestroyTeam = function (event) {
+  // prevent default submit action to stop the page from refreshing
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+
+  // API call for deleting one team
+  api.destroy(formData)
+
+  // create functions to run when Delete one Team is sucessful or fails
+    .then(ui.destroySuccess)
+    .catch(ui.onError)
+}
 
 module.exports = {
-  onCreateTeam
+  onGetTeams,
+  onCreateTeam,
+  onUpdateTeam,
+  onGetTeam,
+  onDestroyTeam
 }

@@ -18,13 +18,15 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   // create event listener sign out
   $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#team-index').on('submit', teamEvents.onGetTeams)
   // create event listener create
-  $('#create-new-team-button').on('submit', teamEvents.onCreateTeam)
+  $('#create-team-button').on('submit', teamEvents.onCreateTeam)
   $('#create-team').on('submit', teamEvents.onCreateTeam)
   // create event listener update
-  $('#update').on('submit', teamEvents.onUpdateTeam)
+  $('#update-team-button').on('submit', teamEvents.onUpdateTeam)
+  $('#update-team').on('submit', teamEvents.onUpdateTeam)
   // create event listener show
-  $('#show').on('submit', teamEvents.onShowTeam)
+  $('#show-team').on('submit', teamEvents.onGetTeam)
   // create event listener destroy
-  $('#destroy').on('submit', teamEvents.onDestroyTeam)
+  $('#destroy-team').on('submit', teamEvents.onDestroyTeam)
 })
