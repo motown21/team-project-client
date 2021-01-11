@@ -10,7 +10,7 @@ const teamEvents = require('./teams/events')
 
 $(() => {
   $('.authenticated').hide()
-  // your JS code goes here
+
   $('#sign-up').on('submit', authEvents.onSignUp)
   // event listener for sign in
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -18,15 +18,31 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   // create event listener sign out
   $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#team-index').on('submit', teamEvents.onGetTeams)
+  // Team Event listener menu buttons
+  $('#all-teams-button').on('click', function () {
+
+  })
+  $('#create-team-button').on('click', function () {
+
+  })
+  $('#update-team-button').on('click', function () {
+
+  })
+  $('#show-team-button').on('click', function () {
+
+  })
+  $('#destroy-team-button').on('click', function () {
+
+  })
+  // Team event listeners
+  // find all teams
+  $('#team-index').on('click', teamEvents.onGetTeams)
   // create event listener create
-  $('#create-team-button').on('submit', teamEvents.onCreateTeam)
   $('#create-team').on('submit', teamEvents.onCreateTeam)
   // create event listener update
-  $('#update-team-button').on('submit', teamEvents.onUpdateTeam)
   $('#update-team').on('submit', teamEvents.onUpdateTeam)
   // create event listener show
-  $('#show-team').on('submit', teamEvents.onGetTeam)
+  $('#show-team').on('submit', teamEvents.onShowTeam)
   // create event listener destroy
   $('#destroy-team').on('submit', teamEvents.onDestroyTeam)
 })

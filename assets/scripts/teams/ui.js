@@ -8,38 +8,40 @@ const indexSuccess = function (response) {
 
   // empty team-display element so we can replace whatever was there with the
   // teams we get back from the API
-  $('#team-display').html('')
-
+  // $('#team-display').html('')
+  let teamHTML = ''
   // loop through API response data
   response.teams.forEach(team => {
     // build HTML element with data
-    const teamHTML = (`
+    const currentTeam =
+    (`
+      <div>
       <h4>Name: ${team.name}</h4>
       <p>Coach: ${team.coach}</p>
       <p>Mascot: ${team.mascot}</p>
       <p>Record: ${team.record}</p>
       <p>City: ${team.city}</p>
       <br>
+      </div>
     `)
-
-    // append teamHTML to our team-display element
-    $('#team-display').append(teamHTML)
+    teamHTML += currentTeam
+  // append teamHTML to our team-display element
   })
+  $('#team-index-message').html(teamHTML)
+}
+
+const indexFailure = function (error) {
+  $('#message').text('Error on getting teams')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.error('onIndexFailure ran. Error is :', error)
 }
 
 const createSuccess = function (response) {
   $('#message').text('You created a New Team')
   store.team = response.team
 
-  // check if the team-display element is NOT just an empty string
-  if (!($('#team-display').html() === '')) {
-    // if the element is NOT empty it is probably displaying the team
-    // information, but we just created a new team!
-    // we can add a message to let the users know they should request all of
-    // the teams again to see the newly created team included
-    $('#team-display').html('Teams have changed! Click "Get All Teams"again to see all the teams.')
-  }
-  // $('#team-display').html('')
+  $('#team-display').html('')
 
   // add class for success messaging
   $('#create-team-message').addClass('success')
@@ -96,6 +98,13 @@ const updateSuccess = function (response) {
   // reset all forms
   $('form').trigger('reset')
 }
+const showFailure = function (error) {
+  $('#message').text('Error on getting team')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.error('onShowFailure ran. Error is :', error)
+}
+
 const showSuccess = function (response) {
   // log the information we get back from the API so we know how we can
   // interact with it.
@@ -139,12 +148,22 @@ const destroySuccess = function () {
   // reset all forms
   $('form').trigger('reset')
 }
+const destroyFailure = function (error) {
+  $('#message').text('Error on deleting team')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.error('onDestroyFailure ran. Error is :', error)
+}
+
 module.exports = {
   indexSuccess,
+  indexFailure,
   createSuccess,
   createFailure,
   updateSuccess,
   showSuccess,
-  destroySuccess
+  showFailure,
+  destroySuccess,
+  destroyFailure
 
 }

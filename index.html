@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>DREAM team</title>
+  <title>NBA team</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -42,12 +42,8 @@
 
   <p id="message"></p>
 
-  <!-- removed form and just add button with id -->
-
-
-  <!--  </div> -->
-
-  <h1>CENTER COURT</h1>
+  <h1>DREAM TEAM</h1>
+  <h2>CENTER COURT</h2>
 
   <button id="all-teams-button" type="submit"> All Teams</button>
   <button id="create-team-button" type="submit"> Create Team</button>
@@ -59,9 +55,11 @@
   <section>
     <h2>Get All Teams</h2>
     <button id="team-index">Get All Teams</button>
+    <p id="team-index-message"></p>
   </section>
 
   <h2> Create Team</h2>
+  <div class="team-display"></div>
   <form id="create-team">
     <label for="name">Team Name:</label><br>
     <input name="team[name]" type="text" placeholder="Team Name"><br>
@@ -76,16 +74,24 @@
     <button type="submit" id="create-submit-button"> submit</button>
   </form>
   <section>
-    <div id="create-team-message" class="user-feedback"></div>
-  </section>
-  <section>
-    <div id="error-message" class="user-feedback"></div>
-    <div id="display-team"></div>
-  </section>
+  <div id="create-team-message" class="user-feedback"></div>
+      </section>
+      <section>
+        <div id="error-message" class="user-feedback"></div>
+        <div id="team-display"></div>
+      </section>
 
+
+  <h2>Show My Team</h2>
+  <form id="show-team">
+    <input type="text" name="team[id]" placeholder="Enter Team ID">
+    <button type="submit">Get Team</button>
+  </form>
 
   <h2> Update Team</h2>
-  <form id="update">
+  <form id="update-team">
+    <label for="name">Team ID:</label><br>
+    <input name="team[id]" type="text" placeholder="team id here">
     <label for="name">Team Name:</label><br>
     <input name="team[name]" type="text" placeholder="Team Name"><br>
     <label for="coach">Coach:</label><br>
@@ -98,21 +104,15 @@
     <input name="team[city]" type="text" placeholder="City"><br>
     <button type="submit" id="update-submit-button"> Update</button>
   </form>
-  <div id="update-team-message" class="user-feedback"></div>
-
-  <h2>Get One Team</h2>
-  <form id="show-team">
-    <input name="team[name]" type="text" placeholder="team name here">
-    <button type="submit">Get Team</button>
-  </form>
+  <p id="update-team-message"></p>
 
   <h2>Delete One Team</h2>
   <form id="destroy-team">
-    <input name="team[name]" placeholder="team name here">
+    <input name="team[id]" placeholder="team id here">
     <button type="submit">Delete </button>
 
   </form>
-  <div id="delete-team-message" class="user-feedback"></div>
+  <div id="delete-team-message"></div>
 
 </body>
 

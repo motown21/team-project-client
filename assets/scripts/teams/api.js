@@ -3,7 +3,7 @@ const config = require('./../config')
 const store = require('./../store')
 
 // make GET request to /teams
-const index = function () {
+const teamIndex = function () {
   return $.ajax({
     url: config.apiUrl + '/teams',
     method: 'GET',
@@ -24,8 +24,9 @@ const createTeam = function (teamData) {
     data: teamData
   })
 }
+
 // Make GET request to /teams
-const show = function (teamData) {
+const showTeam = function (teamData) {
   return $.ajax({
     url: config.apiUrl + '/teams/' + teamData.team.id,
     method: 'GET',
@@ -34,18 +35,9 @@ const show = function (teamData) {
     }
   })
 }
-// Make DELETE request to /teams
-const destroy = function (teamData) {
-  return $.ajax({
-    url: config.apiUrl + '/teams/' + teamData.team.id,
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
+
 // Make PATCH request to /teams
-const update = function (teamData) {
+const updateTeam = function (teamData) {
   return $.ajax({
     url: config.apiUrl + '/teams/' + teamData.team.id,
     method: 'PATCH',
@@ -56,11 +48,22 @@ const update = function (teamData) {
   })
 }
 
+// Make DELETE request to /teams
+const destroyTeam = function (teamData) {
+  return $.ajax({
+    url: config.apiUrl + '/teams/' + teamData.team.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  index,
+  teamIndex,
   createTeam,
-  show,
-  destroy,
-  update
+  showTeam,
+  updateTeam,
+  destroyTeam
 
 }
