@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <!-- <div class="unauthenticated"> -->
+<div class="unauthenticated">
   <form id="sign-up">
     <input name="credentials[email]" type="text" placeholder="NBA@email.com">
     <input name="credentials[password]" type="password" placeholder="Password">
@@ -27,9 +27,9 @@
     <input name="credentials[password]" type="password" placeholder="Password">
     <button type="submit"> Sign In </button>
   </form>
-  <!-- </div> -->
+  </div>
 
-  <!-- <div class="authenticated"> -->
+  <div class="authenticated">
   <form id="change-password">
     <input name="passwords[old]" type="password" placeholder="old password">
     <input name="passwords[new]" type="password" placeholder="new password">
@@ -71,27 +71,28 @@
     <input name="team[record]" type="text" placeholder="(0-0)"><br>
     <label for="city">City:</label><br>
     <input name="team[city]" type="text" placeholder="City"><br>
-    <button type="submit" id="create-submit-button"> submit</button>
+    <button id="create-submit-button"> submit</button>
   </form>
   <section>
-  <div id="create-team-message" class="user-feedback"></div>
+    <p id="create-team-message" class="user-feedback"></p>
       </section>
       <section>
         <div id="error-message" class="user-feedback"></div>
         <div id="team-display"></div>
       </section>
 
-
+<!--
   <h2>Show My Team</h2>
   <form id="show-team">
     <input type="text" name="team[id]" placeholder="Enter Team ID">
     <button type="submit">Get Team</button>
+      <p id="show-team-message"></p>
   </form>
-
+-->
   <h2> Update Team</h2>
   <form id="update-team">
     <label for="name">Team ID:</label><br>
-    <input name="team[id]" type="text" placeholder="team id here">
+    <input name="team[_id]" type="text" placeholder="team id here">
     <label for="name">Team Name:</label><br>
     <input name="team[name]" type="text" placeholder="Team Name"><br>
     <label for="coach">Coach:</label><br>
@@ -110,10 +111,9 @@
   <form id="destroy-team">
     <input name="team[id]" placeholder="team id here">
     <button type="submit">Delete </button>
-
+    <p id="destroy-team-message"></p>
   </form>
-  <div id="delete-team-message"></div>
-
+</div>
 </body>
 
 </html>

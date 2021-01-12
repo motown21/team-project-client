@@ -23,13 +23,13 @@ $(() => {
 
   })
   $('#create-team-button').on('click', function () {
-
+    $('#create-team').show()
   })
   $('#update-team-button').on('click', function () {
-
+    $('#update-team').show()
   })
   $('#show-team-button').on('click', function () {
-
+    $('#show-team').show()
   })
   $('#destroy-team-button').on('click', function () {
 
