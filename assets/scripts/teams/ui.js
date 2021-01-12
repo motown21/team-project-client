@@ -119,10 +119,9 @@ const updateSuccess = function (response) {
   // $('form').trigger('reset')
 }
 
-const updateFailure = function (error) {
-$('#update-team-message').text('Error on getting team')
-)
-}
+// const updateFailure = function (error) {
+// $('#update-team-message').text('Error on getting team')
+
 // const showSuccess = function (response) {
 //   $('#message').text('show Success')
 //   console.log(response)
@@ -151,15 +150,9 @@ $('#update-team-message').text('Error on getting team')
 // }
 const destroySuccess = function () {
   // add success message to our delete-team -message element
-   $('#message').text('You successfully deleted the team')
-    console.log(response)
+  $('#message').text('You successfully deleted the team')
 
-    let teamHTML = ''
-    // loop through API response data
-    response.teams.forEach(team => {
-      // build HTML element with data
-      const currentTeam =
-        (`
+  // append teamHTML to our team-display element
   setTimeout(() => {
     $('#delete-team-message').html('')
     $('#delete-team-message').removeClass('success')
@@ -168,10 +161,10 @@ const destroySuccess = function () {
   // reset all forms
   $('form').trigger('reset')
 }
+
 const destroyFailure = function (error) {
   $('#message').text('Error on deleting team')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+
   console.error('onDestroyFailure ran. Error is :', error)
 }
 
