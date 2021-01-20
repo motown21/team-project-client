@@ -1,8 +1,29 @@
 @import '~bootstrap/scss/bootstrap';
 
-body {
+$bgcolor: black;
+$textcolor: lightblue;
+$fontsize: 18px;
+$backgroundImage: url('https://i.imgur.com/ky93CAR.jpg');
 
-  background-image:  url("https://imgur.com/2nlcsq5");
-  background-repeat: no-repeat;
-  background-size: auto;
+/* Use the variables */
+body {
+ background-image: $backgroundImage;
+ /*no-repeat center center;*/
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-color: $bgcolor;
+ color: $textcolor;
+ font-size: $fontsize;
+ background-position: center;
+ display: flex;
+ justify-content: center;
+ margin: 200px;
 }
+
+form  {
+background-color: black;
+ }
+
+ #nav button {
+   background-color: blue;
+ }

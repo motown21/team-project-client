@@ -38,8 +38,9 @@ const showTeam = function (teamData) {
 
 // Make PATCH request to /teams
 const updateTeam = function (teamData) {
+  console.log(store.user)
   return $.ajax({
-    url: config.apiUrl + '/teams/' + teamData.team.id,
+    url: config.apiUrl + '/teams/' + teamData.team._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -50,8 +51,9 @@ const updateTeam = function (teamData) {
 
 // Make DELETE request to /teams
 const destroyTeam = function (teamData) {
+  console.log('team id is ', teamData)
   return $.ajax({
-    url: config.apiUrl + '/teams/' + teamData.team._id,
+    url: config.apiUrl + '/teams/' + teamData.team.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token

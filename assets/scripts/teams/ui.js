@@ -86,86 +86,74 @@ const createFailure = function (error) {
 }
 
 const updateSuccess = function (response) {
-  // add success message to our update-team-message element
+  // update successful message
   $('#message').text('You successfully updated the team')
-  console.log(response)
-
-  let teamHTML = ''
-  // loop through API response data
-  response.teams.forEach(team => {
-    // build HTML element with data
-    const currentTeam =
-      (`
-      <div>
-      <h4>Name: ${team.name}</h4>
-      <p>Coach: ${team.coach}</p>
-      <p>Mascot: ${team.mascot}</p>
-      <p>Record: ${team.record}</p>
-      <p>City: ${team.city}</p>
-      <p>Id: ${team.id}</p>
-      <br>
-      </div>
-    `)
-    teamHTML += currentTeam
-    // append teamHTML to our team-display element
-  })
-  $('#update-team-message').html(teamHTML)
-  // setTimeout(() => {
-  //   $('#update-team-message').html('')
-  //   $('#update-team-message').removeClass('success')
-  // }, 5000)
-
-  // // reset all forms
-  // $('form').trigger('reset')
+  // console.log(response)
+  //
+  // // store.teams = response.teams
+  // let teamHTML = ''
+  // // loop through API response data
+  // response.teams.forEach(team => {
+  //   // build HTML element with data
+  //   const currentTeam =
+  //     (`
+  //     <div>
+  //     <h4>Name: ${team.name}</h4>
+  //     <p>Coach: ${team.coach}</p>
+  //     <p>Mascot: ${team.mascot}</p>
+  //     <p>Record: ${team.record}</p>
+  //     <p>City: ${team.city}</p>
+  //     <p>ID: ${team._id}</p>
+  //     <br>
+  //     </div>
+  //     `)
+  //   teamHTML += currentTeam
+  //   // append teamHTML to our team-display element
+  // })
+  // $('#create-team-message').html(teamHTML)
 }
 
-// const updateFailure = function (error) {
-// $('#update-team-message').text('Error on getting team')
-
-// const showSuccess = function (response) {
-//   $('#message').text('show Success')
-//   console.log(response)
-//
-//   let teamHTML = ''
-//   // loop through API response data
-//   response.teams.find(team => {
-//     // build HTML element with data
-//     const currentTeam = (`
-//       <div>
-//       <h4>Name: ${team.name}</h4>
-//       <p>Coach: ${team.coach}</p>
-//       <p>Mascot: ${team.mascot}</p>
-//       <p>Record: ${team.record}</p>
-//       <p>City: ${team.city}</p>
-//       <p>id: ${team._id}</p>
-//       <br>
-//       </div>
-//     `)
-//     teamHTML += currentTeam
-//     // append teamHTML to our team-display element
-//   })
-//   $('#show-team-message').html(teamHTML)
-//   // reset all forms
-//   $('form').trigger('reset')
-// }
+const updateFailure = function () {
+  $('#messsage').text('Update Failed')
+}
+//     // const showSuccess = function (response) {
+//     //   $('#message').text('show Success')
+//     //   console.log(response)
+//     //
+//     //   let teamHTML = ''
+//     //   // loop through API response data
+//     //   response.teams.find(team => {
+//     //     // build HTML element with data
+//     //     const currentTeam = (`
+//     //       <div>
+//     //       <h4>Name: ${team.name}</h4>
+//     //       <p>Coach: ${team.coach}</p>
+//     //       <p>Mascot: ${team.mascot}</p>
+//     //       <p>Record: ${team.record}</p>
+//     //       <p>City: ${team.city}</p>
+//     //       <p>id: ${team._id}</p>
+//     //       <br>
+//     //       </div>
+//     //     `)
+//     //     teamHTML += currentTeam
+//     //     // append teamHTML to our team-display element
+//     //   })
+//     //   $('#show-team-message').html(teamHTML)
+//     //   // reset all forms
+//     //   $('form').trigger('reset')
+//     // }
 const destroySuccess = function () {
   // add success message to our delete-team -message element
   $('#message').text('You successfully deleted the team')
-
-  // append teamHTML to our team-display element
-  setTimeout(() => {
-    $('#delete-team-message').html('')
-    $('#delete-team-message').removeClass('success')
-  }, 5000)
-
-  // reset all forms
+  // trigger rest
   $('form').trigger('reset')
 }
 
 const destroyFailure = function (error) {
-  $('#message').text('Error on deleting team')
-
-  console.error('onDestroyFailure ran. Error is :', error)
+  $('#message').text('Error on getting teams')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.error(' Error', error)
 }
 
 module.exports = {
@@ -174,8 +162,7 @@ module.exports = {
   createSuccess,
   createFailure,
   updateSuccess,
-  // showSuccess,
-  // showFailure,
+  updateFailure,
   destroySuccess,
   destroyFailure
 }

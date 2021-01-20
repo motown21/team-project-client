@@ -20,7 +20,7 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   // Team Event listener menu buttons
   $('#all-teams-button').on('click', function () {
-
+    $('#team-index').click()
   })
   $('#create-team-button').on('click', function () {
     $('#create-team').show()

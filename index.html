@@ -30,6 +30,8 @@
   </form>
   </div>
 
+<!--<a id="background-img" href="https://imgur.com/2nlcsq5"></a>-->
+
   <div class="authenticated">
   <form id="change-password">
     <input name="passwords[old]" type="password" placeholder="old password">
@@ -45,17 +47,17 @@
 
   <h1>DREAM TEAM</h1>
   <h2>CENTER COURT</h2>
-
+  <div id =nav>
   <button id="all-teams-button" type="submit"> All Teams</button>
   <button id="create-team-button" type="submit"> Create Team</button>
   <button id="update-team-button" type="submit"> Update Team</button>
   <button id="show-team-button" type="submit"> Show Team</button>
   <button id="destroy-team-button" type="submit"> Destroy team</button>
-
+  </div>
 
   <section>
     <h2>Get All Teams</h2>
-    <button id="team-index">Get All Teams</button>
+    <button id="team-index">All Teams</button>
     <p id="team-index-message"></p>
   </section>
 
@@ -72,7 +74,7 @@
     <input name="team[record]" type="text" placeholder="(0-0)"><br>
     <label for="city">City:</label><br>
     <input name="team[city]" type="text" placeholder="City"><br>
-    <button id="create-submit-button"> submit</button>
+    <button id="create-submit-button"> Create</button>
   </form>
   <section>
     <p id="create-team-message" class="user-feedback"></p>
@@ -93,7 +95,7 @@
   <h2> Update Team</h2>
   <form id="update-team">
     <label for="name">Team ID:</label><br>
-    <input name="team[_id]" type="text" placeholder="team id here">
+    <input name="team[_id]" type="text" placeholder="team id here"><br>
     <label for="name">Team Name:</label><br>
     <input name="team[name]" type="text" placeholder="Team Name"><br>
     <label for="coach">Coach:</label><br>

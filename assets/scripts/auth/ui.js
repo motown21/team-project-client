@@ -17,6 +17,7 @@ const signInSuccess = function (response) {
   $('.authenticated').show()
   // Hide messge when user is signed in
   $('.unauthenticated').hide()
+  $('form').trigger('reset')
 }
 
 const signInFailure = function (error) {
@@ -29,6 +30,7 @@ const changePasswordSuccess = function (response) {
 }
 const changePasswordFailure = function (error) {
   $('#message').text('Change password failed with error' + error.message)
+  $('form').trigger('reset')
 }
 // creating a message that displays that the user has signed out successfully
 const signOutSuccess = function () {

@@ -39,6 +39,9 @@ const onUpdateTeam = function (event) {
   const formData = getFormFields(form)
   // create functions to run when updateTeam is sucessful or fails
   api.updateTeam(formData)
+    .then(function (response) {
+      return response
+    })
     .then(ui.updateSuccess)
     .catch(ui.updateFailure)
 }
@@ -64,8 +67,9 @@ const onDestroyTeam = function (event) {
   event.preventDefault()
 
   const form = event.target
+  // console.log(event.target)
   const formData = getFormFields(form)
-
+  console.log('get form fileds here ' + getFormFields)
   // API call for deleting one team
   api.destroyTeam(formData)
 
