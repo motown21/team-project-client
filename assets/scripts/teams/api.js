@@ -26,15 +26,15 @@ const createTeam = function (teamData) {
 }
 
 // Make GET request to /teams
-const showTeam = function (teamData) {
-  return $.ajax({
-    url: config.apiUrl + '/teams/' + teamData.team._id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
+// const showTeam = function (teamData) {
+//   return $.ajax({
+//     url: config.apiUrl + '/teams/' + teamData.team._id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     }
+//   })
+// }
 
 // Make PATCH request to /teams
 const updateTeam = function (teamData) {
@@ -64,7 +64,7 @@ const destroyTeam = function (teamData) {
 module.exports = {
   teamIndex,
   createTeam,
-  showTeam,
+  // showTeam,
   updateTeam,
   destroyTeam
 

@@ -47,21 +47,20 @@ const onUpdateTeam = function (event) {
 }
 
 // index GET one team
-const onShowTeam = function (event) {
-  // prevent default submit action to stop the page from refreshing
-  event.preventDefault()
+// const onShowTeam = function (event) {
+//   // prevent default submit action to stop the page from refreshing
+//   event.preventDefault()
 
-  const form = event.target
-  const formData = getFormFields(form)
+//   const form = event.target
+//   const formData = getFormFields(form)
 
-  // API call for getting one team
-  api.showTeam(formData)
+//   // API call for getting one team
+//   api.showTeam(formData)
 
-  // create functions to run when Get one Team is sucessful or fails
-    .then(ui.showSuccess)
-    .catch(ui.showFailure)
-}
-
+//   // create functions to run when Get one Team is sucessful or fails
+//     .then(ui.showSuccess)
+//     .catch(ui.showFailure)
+// }
 const onDestroyTeam = function (event) {
   // prevent default submit action to stop the page from refreshing
   event.preventDefault()
@@ -81,7 +80,7 @@ const onDestroyTeam = function (event) {
 module.exports = {
   onGetTeams,
   onCreateTeam,
-  onShowTeam,
+  // onShowTeam,
   onUpdateTeam,
   onDestroyTeam
 }

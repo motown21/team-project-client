@@ -1,29 +1,257 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
-$bgcolor: black;
-$textcolor: lightblue;
-$fontsize: 18px;
+
+$primary: #293241;
+$secondary: #333533;
+$hover-color: #ecf8f8;
+$bgcolor: #212529;
+$textcolor: #98c1d9;
+$h1-color: #e0fbfc;
+$h2-color: #fca311;
+$fontsize: 20px;
 $backgroundImage: url('https://i.imgur.com/ky93CAR.jpg');
 
 /* Use the variables */
 body {
  background-image: $backgroundImage;
- /*no-repeat center center;*/
  background-size: cover;
  background-repeat: no-repeat;
  background-color: $bgcolor;
  color: $textcolor;
- font-size: $fontsize;
  background-position: center;
- display: flex;
+ // display: flex;
  justify-content: center;
- margin: 200px;
 }
 
-form  {
-background-color: black;
- }
+.header {
+  // margin: -0.rem;
+  display: flex;
+  margin-top: 0px;
+}
 
- #nav button {
-   background-color: blue;
+h1 {
+  color: $h1-color;
+  font-family: 'Oswald', sans-serif;
+  font-size: 100px;
+  border: #212529;
+}
+h2 {
+  color: $h2-color;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+}
+#menu-title {
+  color: $h2-color;
+  font-family: 'Oswald', sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+.home-page {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  border: 5px solid #ddd;
+  color: $textcolor;
+  font-size: $fontsize;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  margin: 200px 50px;
+  padding: 50px 80px;
+  align-items: center;
+}
+
+.nav {
+  border: 5px solid #ddd;
+  color: $textcolor;
+  font-size: $fontsize;
+  // background-position: center;
+  display: inline ;
+  justify-content: center;
+  margin: 30px 20px;
+  padding: 50px 80px;
+  align-items: center;
+}
+
+#menu {
+  background-image: url(https://i.imgur.com/ogbIbKx.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $textcolor;
+  font-size: $fontsize;
+  background-position: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+#sign-up, #sign-in {
+  vertical-align: middle;
+  display: flex;
+  width: 100%;
+}
+#change-password, #sign-out {
+  vertical-align: middle;
+  display: flex;
+  width: 25%;
+}
+
+#sign-up-button:hover , #sign-in-button:hover {
+   background-color: $hover-color;
+}
+
+#sign-up-button, #sign-in-button, #change-password-button, #sign-out-button {
+  border: 1px solid #ddd;
+  color: black;
+  background-color: #1b98e0;
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#update-submit-button:hover , #create-submit-button:hover {
+   background-color: #72b01d;
+}
+
+#destroy-submit-button:hover {
+  background-color: #d7263d;
+
+}
+
+#team-index, #create-submit-button, #update-submit-button, #destroy-submit-button {
+  border: 1px solid #ddd;
+  color: black;
+  background-color: $h2-color;
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#all-teams-button, #create-team-button, #update-team-button, #destroy-team-button {
+  border: 1px solid #ddd;
+  color: black;
+  background-color: $h2-color;
+  width:15%;
+  padding: 20px 10px;
+  margin: 40px;
+  box-sizing: border-box;
+
+}
+
+ #team-index-message {
+  border: 1px solid #ddd;
+  color: $textcolor;
+  background-color: black; // #fca311;
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#nav-bar {
+  // display: flex-direction;
+  margin: 20px 10px 20px 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  float: left;
+  // display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  top: 0;
+  align-items: flex-start;
+}
+
+#message {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: grey;
+  border: 5px solid #ddd;
+  color: $textcolor;
+  font-size: $fontsize;
+  background-position: center;
+  // display: flex;
+  // justify-content: center;
+  margin: 70px;//200px 50px;
+  padding: 20px;//50px 80px;
+  align-items: center;
+  font-size: 30px;
+}
+
+#create-team {
+   padding: 50px;
+   border: 5px solid #ddd;
+   color: white;
+   height: 600px;
+   text-align: center;
+   flex-direction: column;
+   vertical-align: middle;
+   margin: 100px;
+   background-color: black ;
+   flex-flow: row wrap;
+   align-items: center;
+}
+
+label {
+  text-align: center;
+}
+
+#update-team {
+    padding: 50px;
+    border: 1px solid #ddd;
+    color: white;
+    height: 650px;
+    text-align: center;
+    margin-top: auto 0;
+    flex-direction: column;
+    vertical-align: middle;
+    margin: 100px;
+    padding: 40px;
+    background-color: black ;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+#destroy-team {
+     padding: 50px;
+     border: 1px solid #ddd;
+     color: white;
+     height: 200px;
+     text-align: center;
+     margin-top: auto 0;
+     flex-direction: column;
+     vertical-align: middle;
+     margin: 100px;
+     padding: 40px;
+     background-color: black ;
+     flex-flow: row wrap;
+     align-items: center;
+  }
+
+#sign-up input[type=text], #sign-up input[type=password], #sign-in input[type=text],
+#sign-in input[type=password], #change-password input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 2px 10px;
+  margin: auto 0;
+  box-sizing: border-box;
+}
+
+ @media (max-width: 800px) {
+   .unauthenticated  {
+     margin: 10px 0;
+     flex-direction: column;
+     align-items: stretch;
+   }
  }

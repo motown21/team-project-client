@@ -19,20 +19,35 @@ $(() => {
   // create event listener sign out
   $('#sign-out').on('submit', authEvents.onSignOut)
   // Team Event listener menu buttons
+  // $('#team-index').on('click', function () {
+  //   $('#team-index-message').toggle()
+  // })
+
   $('#all-teams-button').on('click', function () {
-    $('#team-index').click()
+    // $('#team-index-message').toggle()
+    $('#team-index-message').toggle()
+    $('#team-index').hide()
+    $('#create-team').hide()
+    $('#update-team').hide()
+    $('#destroy-team').hide()
   })
   $('#create-team-button').on('click', function () {
     $('#create-team').show()
+    $('#update-team').hide()
+    $('#destroy-team').hide()
   })
   $('#update-team-button').on('click', function () {
     $('#update-team').show()
+    $('#create-team').hide()
+    $('#destroy-team').hide()
   })
-  $('#show-team-button').on('click', function () {
-    $('#show-team').show()
-  })
+  // $('#show-team-button').on('click', function () {
+  //   $('#show-team').show()
+  // })
   $('#destroy-team-button').on('click', function () {
-
+    $('#destroy-team').show()
+    $('#update-team').hide()
+    $('#create-team').hide()
   })
   // Team event listeners
   // find all teams
@@ -42,7 +57,7 @@ $(() => {
   // create event listener update
   $('#update-team').on('submit', teamEvents.onUpdateTeam)
   // create event listener show
-  $('#show-team').on('submit', teamEvents.onShowTeam)
-  // create event listener destroy
+  // $('#show-team').on('submit', teamEvents.onShowTeam)
+  // // create event listener destroy
   $('#destroy-team').on('submit', teamEvents.onDestroyTeam)
 })

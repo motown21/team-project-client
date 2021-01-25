@@ -1,16 +1,11 @@
 'use strict'
-// const store = require('./../store')
-
+// get all teams
 const indexSuccess = function (response) {
-  // log the information we get back from the API so we know how we can
-  // interact with it.
-  console.log(response)
-
-  // empty team-display element so we can replace whatever was there with the
+  // create an empty team-display string
   // teams we get back from the API
-  // $('#team-display').html('')
+  //
   let teamHTML = ''
-  // loop through API response data
+  // loop through each Teams  API response data
   response.teams.forEach(team => {
     // build HTML element with data
     const currentTeam =
@@ -29,18 +24,16 @@ const indexSuccess = function (response) {
     // append teamHTML to our team-display element
   })
   $('#team-index-message').html(teamHTML)
+  $('form').trigger('reset')
 }
 
 const indexFailure = function (error) {
-  $('#message').text('Error on getting teams')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('onIndexFailure ran. Error is :', error)
+  $('#message').text('Error on getting teams' + error.messge)
 }
-
+// create a new team
 const createSuccess = function (response) {
   $('#message').text('Team Created')
-  console.log(response)
+  // console.log(response)
 
   let teamHTML = ''
   // loop through API response data
@@ -62,6 +55,7 @@ const createSuccess = function (response) {
     // append teamHTML to our team-display element
   })
   $('#create-team-message').html(teamHTML)
+  $('form').trigger('reset')
 }
 
 const createFailure = function (error) {
@@ -84,64 +78,49 @@ const createFailure = function (error) {
   // reset all forms
   $('form').trigger('reset')
 }
+// update teams
+
+// const showSuccess = function (response) {
+//   // add success message to our delete-team -message element
+//   $('#message').text('You successfully showed the team')
+//   let teamHTML = ''
+//   // loop through each Teams  API response data
+//   response.teams.forEach(team => {
+//     // build HTML element with data
+//     const currentTeam =
+//       (`
+//       <div>
+//       <h4>Name: ${team.name}</h4>
+//       <p>Coach: ${team.coach}</p>
+//       <p>Mascot: ${team.mascot}</p>
+//       <p>Record: ${team.record}</p>
+//       <p>City: ${team.city}</p>
+//       <p>Id: ${team._id}</p>
+//       <br>
+//       </div>
+//     `)
+//     teamHTML += currentTeam
+//     // append teamHTML to our team-display element
+//   })
+//   $('#team-index-message').html(teamHTML)
+//   // trigger rest
+//   $('form').trigger('reset')
+// }
+
+// const showFailure = function (error) {
+//   $('#message').text('Error on getting teams' + error.messge)
+// }
 
 const updateSuccess = function (response) {
-  // update successful message
+  // creating a message that displays to the user they have sucessfully updated a team
   $('#message').text('You successfully updated the team')
-  // console.log(response)
-  //
-  // // store.teams = response.teams
-  // let teamHTML = ''
-  // // loop through API response data
-  // response.teams.forEach(team => {
-  //   // build HTML element with data
-  //   const currentTeam =
-  //     (`
-  //     <div>
-  //     <h4>Name: ${team.name}</h4>
-  //     <p>Coach: ${team.coach}</p>
-  //     <p>Mascot: ${team.mascot}</p>
-  //     <p>Record: ${team.record}</p>
-  //     <p>City: ${team.city}</p>
-  //     <p>ID: ${team._id}</p>
-  //     <br>
-  //     </div>
-  //     `)
-  //   teamHTML += currentTeam
-  //   // append teamHTML to our team-display element
-  // })
-  // $('#create-team-message').html(teamHTML)
+  $('form').trigger('reset')
 }
 
 const updateFailure = function () {
   $('#messsage').text('Update Failed')
 }
-//     // const showSuccess = function (response) {
-//     //   $('#message').text('show Success')
-//     //   console.log(response)
-//     //
-//     //   let teamHTML = ''
-//     //   // loop through API response data
-//     //   response.teams.find(team => {
-//     //     // build HTML element with data
-//     //     const currentTeam = (`
-//     //       <div>
-//     //       <h4>Name: ${team.name}</h4>
-//     //       <p>Coach: ${team.coach}</p>
-//     //       <p>Mascot: ${team.mascot}</p>
-//     //       <p>Record: ${team.record}</p>
-//     //       <p>City: ${team.city}</p>
-//     //       <p>id: ${team._id}</p>
-//     //       <br>
-//     //       </div>
-//     //     `)
-//     //     teamHTML += currentTeam
-//     //     // append teamHTML to our team-display element
-//     //   })
-//     //   $('#show-team-message').html(teamHTML)
-//     //   // reset all forms
-//     //   $('form').trigger('reset')
-//     // }
+// destroy team
 const destroySuccess = function () {
   // add success message to our delete-team -message element
   $('#message').text('You successfully deleted the team')
@@ -150,10 +129,7 @@ const destroySuccess = function () {
 }
 
 const destroyFailure = function (error) {
-  $('#message').text('Error on getting teams')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error(' Error', error)
+  $('#message').text('Error on getting teams' + error.messge)
 }
 
 module.exports = {
@@ -161,6 +137,8 @@ module.exports = {
   indexFailure,
   createSuccess,
   createFailure,
+  // showSuccess,
+  // showFailure,
   updateSuccess,
   updateFailure,
   destroySuccess,

@@ -1,5 +1,5 @@
 const store = require('./../store')
-
+// Sign Up
 const signUpSuccess = function (response) {
   // creating a message that displays to the user they have sucessfully signed up
   $('#message-sign-up').text('Signed Up Successfully!')
@@ -9,8 +9,9 @@ const signUpSuccess = function (response) {
 const signUpFailure = function (error) {
   $('#message').text('Sign Up Failed ' + error.message)
 }
-// creating a message that displays that the user has signed in successfully
+// Sign In
 const signInSuccess = function (response) {
+// creating a message that displays that the user has signed in successfully
   $('#message').text('Sign In Success! Welcome')
   store.user = response.user
   // Show messaage when user is signed in
@@ -21,24 +22,28 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (error) {
+// create a message that displays sign in has failed
   $('#message').text('Sign In Failed with error ' + error.message)
 }
-
-// creating a message that displays that the user has changed password successfully
+// Change Password
 const changePasswordSuccess = function (response) {
+// creating a message that displays that the user has changed password successfully
   $('#message').text('Change password Successfully')
-}
-const changePasswordFailure = function (error) {
-  $('#message').text('Change password failed with error' + error.message)
   $('form').trigger('reset')
 }
-// creating a message that displays that the user has signed out successfully
+
+const changePasswordFailure = function (error) {
+  $('#message').text('Change password failed with error' + error.message)
+// change password failed
+}
+// Sign Out
 const signOutSuccess = function () {
-  console.log('in sign out success')
+  // console.log('in sign out success')
+  // creating a message that displays that the user has signed out successfully
   $('#message').text('Sign out Successful!')
   $('.authenticated').hide()
   $('.unauthenticated').show()
-  $('#game-board').hide()
+  // store user info
   store.user = null
   // reset form
   $('form').trigger('reset')
