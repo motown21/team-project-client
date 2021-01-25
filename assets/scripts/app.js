@@ -26,7 +26,7 @@ $(() => {
   $('#all-teams-button').on('click', function () {
     // $('#team-index-message').toggle()
     $('#team-index-message').toggle()
-    $('#team-index').hide()
+    $('#team-index').show()
     $('#create-team').hide()
     $('#update-team').hide()
     $('#destroy-team').hide()
