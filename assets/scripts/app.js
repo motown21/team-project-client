@@ -7,9 +7,13 @@ const authEvents = require('./auth/events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const teamEvents = require('./teams/events')
+const playerEvents = require('./players/events')
 
 $(() => {
   $('.authenticated').hide()
+  $('.authenticated').on('submit', function () {
+    $('$background-color').show()
+  })
 
   $('#sign-up').on('submit', authEvents.onSignUp)
   // event listener for sign in
@@ -30,16 +34,28 @@ $(() => {
     $('#create-team').hide()
     $('#update-team').hide()
     $('#destroy-team').hide()
+    $('#all-players').hide()
+    $('#create-player').hide()
+    $('#update-player').hide()
+    $('#destroy-player').hide()
   })
   $('#create-team-button').on('click', function () {
     $('#create-team').show()
     $('#update-team').hide()
     $('#destroy-team').hide()
+    $('#all-players').hide()
+    $('#create-player').hide()
+    $('#update-player').hide()
+    $('#destroy-player').hide()
   })
   $('#update-team-button').on('click', function () {
     $('#update-team').show()
     $('#create-team').hide()
     $('#destroy-team').hide()
+    $('#all-players').hide()
+    $('#create-player').hide()
+    $('#update-player').hide()
+    $('#destroy-player').hide()
   })
   // $('#show-team-button').on('click', function () {
   //   $('#show-team').show()
@@ -48,6 +64,17 @@ $(() => {
     $('#destroy-team').show()
     $('#update-team').hide()
     $('#create-team').hide()
+    $('#player-index').show()
+    $('#create-player').hide()
+    $('#update-player').hide()
+    $('#destroy-player').hide()
+  })
+  $('#all-players-button').on('click', function () {
+    $('#player-index').show()
+    $('#player-index-message').toggle()
+    $('#create-player').hide()
+    $('#update-player').hide()
+    // $('#trade-player').hide()
   })
   // Team event listeners
   // find all teams
@@ -60,4 +87,10 @@ $(() => {
   // $('#show-team').on('submit', teamEvents.onShowTeam)
   // // create event listener destroy
   $('#destroy-team').on('submit', teamEvents.onDestroyTeam)
+
+  // player event listener
+  $('#player-index').on('click', playerEvents.onGetPlayers)
+  $('#create-player').on('submit', playerEvents.onCreatePlayer)
+  $('#update-player').on('submit', playerEvents.onUpdatePlayer)
+  $('#destroy-player').on('submit', playerEvents.onDestroyPlayer)
 })

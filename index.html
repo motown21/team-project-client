@@ -40,7 +40,18 @@
 
   <div class="authenticated">
     <div class="nav-">
-        <!-- <p id="message"></p>-->
+      <div id="menu">
+        <h2 id="menu-title">CENTER COURT</h2>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" id="all-teams-button" class="btn btn-outline-primary">All Teams</button>
+        <button type="button" id="create-team-button" class="btn btn-outline-primary">Create Team</button>
+        <button type="button" id="update-team-button" class="btn btn-outline-primary">Update Team</button>
+        <button type="button" id="destroy-team-button" class="btn btn-outline-primary">Destroy Team</button>
+        <button type="button" id="all-players-button" class="btn btn-outline-primary">All Players</button>
+        <button type="button" id="create-player-button" class="btn btn-outline-primary">Create Player</button>
+        <button type="button" id="update-player-button" class="btn btn-outline-primary">Update Player</button>
+        <button type="button" id="trade-player-button" class="btn btn-outline-primary">Destroy Player</button>
+
     <form id="change-password">
     <input name="passwords[old]" type="password" placeholder="old password">
     <input name="passwords[new]" type="password" placeholder="new password">
@@ -48,25 +59,20 @@
   </form>
 
   <form id="sign-out">
-    <button type="submit" id="sign-out-button"> Sign Out</button>
+    <button type="submit" id="sign-out-button"> Sign Out</button><br>
   </form>
 </div>
-
-  <!-- nav bar -->
-
-  <div id="menu">
-    <h2 id="menu-title">CENTER COURT</h2>
-      <p id="message"></p>
-  <button id="all-teams-button" type="submit"> All Teams</button>
-  <button id="create-team-button" type="submit"> Create Team</button>
-  <button id="update-team-button" type="submit"> Update Team</button>
-  <!-- <button id="show-team-button" type="submit"> Show Team</button> -->
-  <button id="destroy-team-button" type="submit"> Destroy team</button>
-  </div>
+<p id="message"></p><br>
+</div>
+</di/,v>
 
   <section>
     <button id="team-index">View Teams</button>
     <p id="team-index-message"></p>
+  </section>
+  <section>
+    <button id="player-index">View Players</button>
+    <p id="player-index-message"></p>
   </section>
 
   <div class="create-team-form"></div>
@@ -125,6 +131,39 @@
     <button type="submit" id="destroy-submit-button">Delete </button>
     <p id="destroy-team-message"></p>
   </form>
+
+
+<div class="create-player-form"></div>
+<form id="create-player">
+    <h2> Create Player</h2>
+  <label for="name">Name:</label><br>
+  <input name="player[name]" type="text" placeholder="Player Name"><br>
+  <label for="position">Position:</label><br>
+  <input name="player[position]" type="text" placeholder="Position"><br>
+  <button id="create-player-submit-button"> Create</button>
+  <p id="create-player-message"></p>
+</form>
+
+<div class="update-player-form"></div>
+<form id="update-player">
+    <h2> Update Player</h2>
+  <label for="name">Player ID:</label><br>
+  <input name="player[_id]" type="text" placeholder="player id here"><br>
+  <label for="name">Name:</label><br>
+  <input name="player[name]" type="text" placeholder="Player Name"><br>
+  <label for="position">Position:</label><br>
+  <input name="player[position]" type="text" placeholder="Position"><br>
+  <button id="update-player-submit-button"> Update</button><br>
+</form>
+  <p id="update-player-message"></p>
+
+<form id="destroy-player">
+    <h2>Trade Player</h2>
+  <input name="player[id]"  type="text" placeholder="Player id here">
+  <button type="submit" id="trade-submit-button">Trade </button>
+  <p id="trade-team-message"></p>
+</form>
+
 </div>
 </body>
 

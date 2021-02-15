@@ -11,6 +11,7 @@ $h1-color: #e0fbfc;
 $h2-color: #fca311;
 $fontsize: 20px;
 $backgroundImage: url('https://i.imgur.com/ky93CAR.jpg');
+// $background2: black;
 
 /* Use the variables */
 body {
@@ -79,11 +80,11 @@ h2 {
   background-image: url(https://i.imgur.com/ogbIbKx.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  color: $textcolor;
-  font-size: $fontsize;
-  background-position: center;
-  flex-direction: row;
-  align-items: center;
+  //color: $textcolor;
+  // ont-size: $fontsize;
+  // background-position: center;
+  // flex-direction: row;
+   align-items: center;
 }
 
 #sign-up, #sign-in {
@@ -92,9 +93,9 @@ h2 {
   width: 100%;
 }
 #change-password, #sign-out {
-  vertical-align: middle;
-  display: flex;
-  width: 25%;
+  // vertical-align: middle;
+  // display: flex;
+  // width: 25%;
 }
 
 #sign-up-button:hover , #sign-in-button:hover {
@@ -120,7 +121,8 @@ h2 {
 
 }
 
-#team-index, #create-submit-button, #update-submit-button, #destroy-submit-button {
+#team-index, #create-submit-button, #update-submit-button, #destroy-submit-button,
+#player-index, #create-player-submit-button, #update-player-submit-button, #trader-submit-button {
   border: 1px solid #ddd;
   color: black;
   background-color: $h2-color;
@@ -130,18 +132,19 @@ h2 {
   box-sizing: border-box;
 }
 
-#all-teams-button, #create-team-button, #update-team-button, #destroy-team-button {
-  border: 1px solid #ddd;
-  color: black;
-  background-color: $h2-color;
-  width:15%;
-  padding: 20px 10px;
-  margin: 40px;
-  box-sizing: border-box;
+#all-teams-button, #create-team-button, #update-team-button, #destroy-team-button, #all-players-button,
+#create-player-button, #update-player-button, #trade-player-button {
+  // border: 1px solid #ddd;
+   // color: black;
+  // background-color: $h2-color;
+     height:15%;
+  // padding: 20px 10px;
+  // margin: 40px;
+  // box-sizing: border-box;
 
 }
 
- #team-index-message {
+ #team-index-message, #player-index-message {
   border: 1px solid #ddd;
   color: $textcolor;
   background-color: black; // #fca311;
@@ -183,7 +186,7 @@ h2 {
   font-size: 30px;
 }
 
-#create-team {
+#create-team, #create-player {
    padding: 50px;
    border: 5px solid #ddd;
    color: white;
@@ -201,7 +204,7 @@ label {
   text-align: center;
 }
 
-#update-team {
+#update-team, #update-player {
     padding: 50px;
     border: 1px solid #ddd;
     color: white;
@@ -217,7 +220,7 @@ label {
     align-items: center;
 }
 
-#destroy-team {
+#destroy-team, #destroy-player {
      padding: 50px;
      border: 1px solid #ddd;
      color: white;
@@ -255,3 +258,11 @@ input[type=text], input[type=password] {
      align-items: stretch;
    }
  }
+//  // Small devices (landscape phones, less than 768px)
+// @media (max-width: 767.98px) { ... }
+//
+// // Medium devices (tablets, less than 992px)
+// @media (max-width: 991.98px) { ... }
+//
+// // Large devices (desktops, less than 1200px)
+// @media (max-width: 1199.98px) { ... }
