@@ -22,7 +22,11 @@ body {
  color: $textcolor;
  background-position: center;
  // display: flex;
- justify-content: center;
+
+}
+.authenticated {
+  background-color: $bgcolor;
+  background-image: hide;
 }
 
 .header {
@@ -122,7 +126,7 @@ h2 {
 }
 
 #team-index, #create-submit-button, #update-submit-button, #destroy-submit-button,
-#player-index, #create-player-submit-button, #update-player-submit-button, #trader-submit-button {
+#player-index, #create-player-submit-button, #update-player-submit-button, #trade-submit-button {
   border: 1px solid #ddd;
   color: black;
   background-color: $h2-color;

@@ -76,6 +76,33 @@ $(() => {
     $('#update-player').hide()
     // $('#trade-player').hide()
   })
+  $('#create-player-button').on('click', function () {
+    $('#destroy-team').hide()
+    $('#update-team').hide()
+    $('#create-team').hide()
+    $('#player-index').show()
+    $('#create-player').show()
+    $('#update-player').hide()
+    $('#destroy-player').hide()
+  })
+  $('#update-player-button').on('click', function () {
+    $('#destroy-team').hide()
+    $('#update-team').hide()
+    $('#create-team').hide()
+    $('#player-index').show()
+    $('#create-player').hide()
+    $('#update-player').show()
+    $('#destroy-player').hide()
+  })
+  $('#trade-player-button').on('click', function () {
+    $('#destroy-team').hide()
+    $('#update-team').hide()
+    $('#create-team').hide()
+    $('#player-index').show()
+    $('#create-player').hide()
+    $('#update-player').hide()
+    $('#destroy-player').show()
+  })
   // Team event listeners
   // find all teams
   $('#team-index').on('click', teamEvents.onGetTeams)
